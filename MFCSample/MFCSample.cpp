@@ -7,6 +7,10 @@
 #include "MFCSample.h"
 #include "MFCSampleDlg.h"
 
+
+#include "BhapticsSDK2.h" 
+#pragma comment (lib, "bhaptics_library.lib")
+
 #ifdef _DEBUG
 #define new DEBUG_NEW
 #endif
@@ -73,6 +77,9 @@ BOOL CMFCSampleApp::InitInstance()
 
 	CMFCSampleDlg dlg;
 	m_pMainWnd = &dlg;
+
+	registryAndInit("9RUMghoaM9e0F9RN7oKy", "yIO5j0nrDFUHo7KSmHBK", "");
+
 	INT_PTR nResponse = dlg.DoModal();
 	if (nResponse == IDOK)
 	{
@@ -95,6 +102,8 @@ BOOL CMFCSampleApp::InitInstance()
 	{
 		delete pShellManager;
 	}
+
+	wsClose();
 
 #if !defined(_AFXDLL) && !defined(_AFX_NO_MFC_CONTROLS_IN_DIALOGS)
 	ControlBarCleanUp();

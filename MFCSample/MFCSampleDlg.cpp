@@ -8,6 +8,9 @@
 #include "MFCSampleDlg.h"
 #include "afxdialogex.h"
 
+#include "BhapticsSDK2.h" 
+
+
 #ifdef _DEBUG
 #define new DEBUG_NEW
 #endif
@@ -65,6 +68,7 @@ BEGIN_MESSAGE_MAP(CMFCSampleDlg, CDialogEx)
 	ON_WM_SYSCOMMAND()
 	ON_WM_PAINT()
 	ON_WM_QUERYDRAGICON()
+ON_BN_CLICKED(IDC_BUTTON1, &CMFCSampleDlg::OnBnClickedButton1)
 END_MESSAGE_MAP()
 
 
@@ -153,3 +157,9 @@ HCURSOR CMFCSampleDlg::OnQueryDragIcon()
 	return static_cast<HCURSOR>(m_hIcon);
 }
 
+
+void CMFCSampleDlg::OnBnClickedButton1()
+{
+	play("zombieattack1");
+	// TODO: 여기에 컨트롤 알림 처리기 코드를 추가합니다.
+}
